@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import Form from '../Form/Form'
-import ReservationContainer from '../ReservationContainer/ReservationContainer'
+import Form from '../Form/Form';
+import ReservationContainer from '../ReservationContainer/ReservationContainer';
+import { getReservations } from '../util/ApiCalls';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      reservations: []
+    }
+  }
+
+  componentDidMount() {
+    getReservations()
+      .then(reservations =>  this.setState({ reservations }))
+      .catch(error => console.log(error.message))
+  }
+
   render() {
     return (
       <div className="App">
@@ -12,7 +26,7 @@ class App extends Component {
           <Form />
         </div>
         <div className='resy-container'>
-          <ReservationContainer />
+          <ReservationContainer reservations={ this.state.reservations }/>
         </div>
       </div>
     )

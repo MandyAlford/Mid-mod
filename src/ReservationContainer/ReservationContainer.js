@@ -6,8 +6,9 @@ class ReservationContainer extends Component {
     super();
   }
   render() {
+    debugger
     return(
-      <ReservationCard />
+      this.props.reservations.map(reservation => <ReservationCard key={reservation.id} name={reservation.name} date={reservation.date} number={reservation.number} time={reservation.time} id={reservation.id}/>)
     )
   }
 }
