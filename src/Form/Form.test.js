@@ -36,4 +36,9 @@ describe('Form', () => {
     expect(numOfGuests).toBeInTheDocument();
 
   });
+
+  it('Makes a reservation with info from inputs', () => {
+    const { getByPlaceholderText } = render(<Form />)
+
+  });
 })
