@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('App', () => {
+  it('Has a title ', () => {
+    const { getByText } = render(<App />)
+    const title = getByText('Turing Cafe Reservations');
+
+    expect(title).toBeInTheDocument();
+  });
+})
