@@ -13,7 +13,6 @@ class Form extends Component {
   }
 
   handleChange = (event) => {
-    debugger
     if(event.target.name==='number') {
       this.setState({ [event.target.name]: parseInt(event.target.value) })
     } else {

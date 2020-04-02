@@ -22,7 +22,6 @@ class App extends Component {
      let currentReservations = [...this.state.reservations]
      currentReservations.push(newReservation)
      this.setState({reservations: currentReservations})
-     debugger
    }
 
   render() {
