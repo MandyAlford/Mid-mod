@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReservationCard from '../ReservationCard/ReservationCard'
 
 class ReservationContainer extends Component {
   constructor() {
@@ -6,7 +7,7 @@ class ReservationContainer extends Component {
   }
   render() {
     return(
-      <p>I am a resy container</p>
+      <ReservationCard />
     )
   }
 }
